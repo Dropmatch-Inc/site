@@ -1,0 +1,101 @@
+<div class="pagehead photo" style="background-image: url('assets/governance-lake.jpg')">
+  <div class="wrap">
+    <div class="crumb"><a href="{{home}}">Home</a> / Transparency</div>
+    <h1>Every dollar accounted for.</h1>
+    <p class="lede">Every transaction, every grant, every document, in public.</p>
+  </div>
+</div>
+<main><div class="wrap doc">
+  <aside class="rail">
+    <div class="title">On this page</div>
+    <a href="#dollar">Where a dollar goes</a>
+    <a href="#ledger">The public ledger</a>
+    <a href="#published">What is published</a>
+    <a href="#standards">Standards we align with</a>
+    <a href="#models">Who we model ourselves on</a>
+  </aside>
+  <div class="body">
+    <h2 id="dollar">Where a dollar goes</h2>
+    <p>One invoice, two lines, two accounts.</p>
+    <div class="diagram">
+      <svg viewBox="0 0 760 250" role="img" aria-label="One invoice splits into the water commitment, at least 75 cents, and the certification fee, at most 25 cents">
+        <g font-family="Manrope, sans-serif" font-size="13" fill="#0B1F33">
+          <rect x="10" y="80" width="140" height="90" rx="12" fill="#EAF2FF"/>
+          <text x="80" y="118" text-anchor="middle" font-weight="800" font-size="16">One invoice</text>
+          <text x="80" y="140" text-anchor="middle" fill="#4B5B6E">two lines</text>
+          <path d="M150 125 C 185 125, 185 55, 215 55" stroke="#1F6FEB" stroke-width="2.5" fill="none"/>
+          <path d="M150 125 C 185 125, 185 195, 215 195" stroke="#1F6FEB" stroke-width="2.5" fill="none"/>
+          <rect x="215" y="15" width="300" height="80" rx="12" fill="#0A2342"/>
+          <text x="233" y="44" font-weight="800" font-size="16" fill="#FFFFFF">Water commitment</text>
+          <text x="233" y="64" fill="#B9C7DA">At least 75 cents of every dollar.</text>
+          <text x="233" y="82" fill="#B9C7DA">For projects.</text>
+          <rect x="215" y="155" width="300" height="80" rx="12" fill="#EAF2FF"/>
+          <text x="233" y="184" font-weight="800" font-size="16">Certification fee</text>
+          <text x="233" y="204" fill="#4B5B6E">At most 25 cents.</text>
+          <text x="233" y="222" fill="#4B5B6E">The published cost of the check.</text>
+          <path d="M515 55 L 550 55" stroke="#1F6FEB" stroke-width="2.5" fill="none"/>
+          <path d="M515 195 L 550 195" stroke="#1F6FEB" stroke-width="2.5" fill="none"/>
+          <rect x="550" y="15" width="200" height="80" rx="12" fill="#E8F7EE"/>
+          <text x="650" y="44" text-anchor="middle" font-weight="800" font-size="15" fill="#15803D">Water fund account</text>
+          <text x="650" y="64" text-anchor="middle" fill="#4B5B6E">Grants only.</text>
+          <text x="650" y="82" text-anchor="middle" fill="#4B5B6E">Its own bank account.</text>
+          <rect x="550" y="155" width="200" height="80" rx="12" fill="#F6F8FB"/>
+          <text x="650" y="184" text-anchor="middle" font-weight="800" font-size="15">Operating account</text>
+          <text x="650" y="204" text-anchor="middle" fill="#4B5B6E">Verification, the registry,</text>
+          <text x="650" y="222" text-anchor="middle" fill="#4B5B6E">filings, hosting.</text>
+        </g>
+      </svg>
+    </div>
+    <div class="rules">
+      <div class="rule"><svg class="ic"><use href="#i-scale"/></svg><div><b>Two accounts, kept separate</b>Water money sits in its own bank account and goes to grants. Operations run on the fee and on operating donors.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-ledger"/></svg><div><b>The fee is the cost of the check</b>Each tier's fee is published as what verification costs. Every water commitment reaches a project in full.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-people"/></svg><div><b>Unpaid in year one</b>Directors serve unpaid. Any compensation, when it exists, is published with the role and the amount.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-check-doc"/></svg><div><b>Cost per person-year, quarterly</b>What a person-year of safe water cost through each program, against GiveWell's bar.</div></div>
+    </div>
+
+    <h2 id="ledger">The public ledger</h2>
+    <p>Every transaction in both accounts, exported from the bank and published monthly. Example rows, so the format is public before the first entry.</p>
+    <table class="stack">
+      <thead><tr><th>Date</th><th>Fund</th><th>Counterparty</th><th>Purpose</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td class="k" data-label="Date">2026-11-03</td><td data-label="Fund">Water</td><td data-label="Counterparty">Example Co</td><td data-label="Purpose">Water commitment, DM-2026-00001</td><td data-label="Amount">+ $4,500.00</td></tr>
+        <tr><td class="k" data-label="Date">2026-11-03</td><td data-label="Fund">Operating</td><td data-label="Counterparty">Example Co</td><td data-label="Purpose">Certification fee, tier 2</td><td data-label="Amount">+ $1,500.00</td></tr>
+        <tr><td class="k" data-label="Date">2026-12-01</td><td data-label="Fund">Water</td><td data-label="Counterparty">Evidence Action</td><td data-label="Purpose">Grant, in-line chlorination, India, 2026 vintage</td><td data-label="Amount">&minus; $4,500.00</td></tr>
+        <tr><td class="k" data-label="Date">2026-12-01</td><td data-label="Fund">Operating</td><td data-label="Counterparty">Vercel</td><td data-label="Purpose">Registry hosting, December</td><td data-label="Amount">&minus; $0.00</td></tr>
+      </tbody>
+    </table>
+    <p class="small">Example data. Individual donors' personal details stay private. Everything else is public.</p>
+
+    <h2 id="published">What is published</h2>
+    <div class="rules">
+      <div class="rule"><svg class="ic"><use href="#i-ledger"/></svg><div><b>Every transaction</b>Both accounts, monthly, with counterparty and purpose.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-tap"/></svg><div><b>Every grant and its evidence</b>Chlorine tests, GPS, photos, sensor data, the other funders sharing credit.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-drop"/></svg><div><b>The registry and the ledger</b>Per company: liters committed, dollars received, project funded, proof of delivery.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-check-doc"/></svg><div><b>The Standard and the factor table</b>With its derivation and sensitivity range, every version.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-shield"/></svg><div><b>The organization</b>Articles, bylaws, the conflict of interest policy, the Form 1023, the determination letter, every Form 990.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-calendar"/></svg><div><b>The annual report</b>Within 120 days of each year end, with the year's grants, costs and registry totals.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-key"/></svg><div><b>The fee schedule and the cost of the check</b>What each tier costs to verify, and the published water price each year.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-ban"/></svg><div><b>Every revocation</b>With the date and the reason.</div></div>
+    </div>
+
+    <h2 id="standards">Standards we align with</h2>
+    <table class="stack std-table">
+      <thead><tr><th>Standard</th><th>What it covers</th><th>Where we stand</th></tr></thead>
+      <tbody>
+        <tr><td class="k" data-label="Standard"><a href="https://give.org/charity-landing-page/bbb-standards-for-charity-accountability" target="_blank" rel="noopener">BBB Wise Giving Alliance, 20 Standards for Charity Accountability</a></td><td data-label="Covers">Governance, finances, results, fundraising: five board members, three meetings a year, 65% of spending on programs, an audit above $1M, cause-marketing disclosures.</td><td data-label="Where we stand">The governance spec. Board of three before the Form 1023, five by year one.</td></tr>
+        <tr><td class="k" data-label="Standard"><a href="https://isealalliance.org/defining-credible-practice/iseal-codes-good-practice" target="_blank" rel="noopener">ISEAL Codes of Good Practice</a></td><td data-label="Covers">How a credible sustainability standard is set, assured and measured. The codes behind Fairtrade, MSC, FSC and Rainforest Alliance.</td><td data-label="Where we stand">The certification spec. Version 1 of the Standard is written against the standard-setting code. Membership when the registry is live.</td></tr>
+        <tr><td class="k" data-label="Standard"><a href="https://candid.org/claim-nonprofit-profile/how-to-earn-a-candid-seal-of-transparency/platinum-seal/" target="_blank" rel="noopener">Candid Seal of Transparency, Platinum</a></td><td data-label="Covers">Goals, strategies, an impact metric, board demographics, published on the organization's profile.</td><td data-label="Where we stand">Year one.</td></tr>
+        <tr><td class="k" data-label="Standard"><a href="https://www.charitynavigator.org/" target="_blank" rel="noopener">Charity Navigator</a></td><td data-label="Covers">A rating from three years of Form 990s.</td><td data-label="Where we stand">Year four, when three 990s exist.</td></tr>
+        <tr><td class="k" data-label="Standard"><a href="https://eur-lex.europa.eu/eli/dir/2024/825/oj/eng" target="_blank" rel="noopener">EU Directive 2024/825</a></td><td data-label="Covers">What a lawful sustainability label is: third-party verified, public requirements, open to all who comply, developed with experts, with a non-compliance procedure.</td><td data-label="Where we stand">The badge is built to meet every clause.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="models">Who we model ourselves on</h2>
+    <div class="rules">
+      <div class="rule"><svg class="ic"><use href="#i-scale"/></svg><div><b><a href="https://www.charitywater.org/" target="_blank" rel="noopener">charity: water</a></b>The 100% model: public money to projects, operations from separate donors, separate bank accounts.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-ledger"/></svg><div><b><a href="https://opencollective.com/" target="_blank" rel="noopener">Open Collective</a></b>Every transaction on a public page.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-search"/></svg><div><b><a href="https://www.givewell.org/" target="_blank" rel="noopener">GiveWell</a></b>Published cost-effectiveness models, called rough out loud.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-pin"/></svg><div><b><a href="https://www.againstmalaria.com/" target="_blank" rel="noopener">Against Malaria Foundation</a></b>Every distribution published, households surveyed at 6, 18, 30 and 42 months.</div></div>
+    </div>
+  </div>
+</div></main>

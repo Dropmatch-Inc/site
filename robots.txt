@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dropmatch.org/sitemap.xml

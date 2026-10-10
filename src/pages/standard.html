@@ -1,0 +1,108 @@
+<div class="pagehead photo" style="background-image: url('assets/standard-hands.jpg')">
+  <div class="wrap">
+    <div class="crumb"><a href="{{home}}">Home</a> / The Standard</div>
+    <h1>The Dropmatch Standard</h1>
+    <p class="lede">How the water footprint of AI usage is measured, verified, matched and proven. Version 1, draft.</p>
+  </div>
+</div>
+<main><div class="wrap doc">
+  <aside class="rail">
+    <div class="title">Contents</div>
+    <a href="#scope">1. What is counted</a>
+    <a href="#factors">2. Tokens to liters</a>
+    <a href="#verification">3. Verifying usage</a>
+    <a href="#match">4. The match</a>
+    <a href="#delivery">5. Delivered water</a>
+    <a href="#claims">6. The badge</a>
+    <a href="#governance">7. Governance</a>
+    <a href="#versions">Version history</a>
+  </aside>
+  <div class="body">
+    <div class="meta"><span>Version <b>1.0 draft</b></span><span>Status <b>In drafting</b></span><span>Public comment <b>30 days</b></span><span>License <b>Open</b></span></div>
+
+    <h2 id="scope">1. What is counted</h2>
+    <p>Two kinds of water consumed, counted at the location where the model was served.</p>
+    <div class="diagram">
+      <svg viewBox="0 0 760 210" role="img" aria-label="Scope 1 cooling water plus scope 2 electricity water equals the footprint">
+        <g font-family="Manrope, sans-serif" font-size="14" fill="#0B1F33">
+          <rect x="10" y="30" width="220" height="140" rx="12" fill="#EAF2FF"/>
+          <g transform="translate(95,50)" stroke="#1F6FEB" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#i-server" width="50" height="50"/></g>
+          <text x="120" y="128" text-anchor="middle" font-weight="800" font-size="16">Scope 1</text>
+          <text x="120" y="150" text-anchor="middle" fill="#4B5B6E">Cooling water at the data center</text>
+          <text x="260" y="108" text-anchor="middle" font-size="34" font-weight="800" fill="#1F6FEB">+</text>
+          <rect x="290" y="30" width="220" height="140" rx="12" fill="#EAF2FF"/>
+          <g transform="translate(375,50)" stroke="#1F6FEB" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#i-bolt" width="50" height="50"/></g>
+          <text x="400" y="128" text-anchor="middle" font-weight="800" font-size="16">Scope 2</text>
+          <text x="400" y="150" text-anchor="middle" fill="#4B5B6E">Water behind the electricity</text>
+          <text x="540" y="108" text-anchor="middle" font-size="34" font-weight="800" fill="#1F6FEB">=</text>
+          <rect x="570" y="30" width="180" height="140" rx="12" fill="#0A2342"/>
+          <g transform="translate(635,50)" stroke="#FFFFFF" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#i-drop" width="50" height="50"/></g>
+          <text x="660" y="128" text-anchor="middle" font-weight="800" font-size="16" fill="#FFFFFF">Footprint</text>
+          <text x="660" y="150" text-anchor="middle" fill="#B9C7DA">About 10x scope 1 alone</text>
+          <text x="380" y="198" text-anchor="middle" fill="#4B5B6E" font-size="13">Full lifecycle figures (hardware, training) are shown as the upper bound.</text>
+        </g>
+      </svg>
+    </div>
+    <p>Why both: a vendor's cooling-only figure understates the footprint by about ten times. One median text prompt, six published answers:</p>
+    <ul class="ladder">
+      <li><span class="val">0.12 mL</span><span class="bar"><i style="width:6%"></i></span><span class="src">Google, accelerators only</span></li>
+      <li><span class="val">0.26 mL</span><span class="bar"><i style="width:10%"></i></span><span class="src">Google, cooling only</span></li>
+      <li><span class="val">0.32 mL</span><span class="bar"><i style="width:12%"></i></span><span class="src">OpenAI, converted from the published figure</span></li>
+      <li><span class="val">1.3 mL</span><span class="bar"><i style="width:22%"></i></span><span class="src">Google's energy plus US grid water</span></li>
+      <li><span class="val">16.9 mL</span><span class="bar"><i style="width:62%"></i></span><span class="src">Li et al., scope 1 plus scope 2, US average</span></li>
+      <li class="top"><span class="val">45 mL</span><span class="bar"><i style="width:100%"></i></span><span class="src">Mistral, full lifecycle</span></li>
+    </ul>
+    <p class="small">Bar lengths are illustrative. The ten to one match covers the whole ladder.</p>
+
+    <h2 id="factors">2. Tokens to liters</h2>
+    <p>Usage is counted in tokens, as providers bill it, and converted with published factors per model tier and region.</p>
+    <table>
+      <thead><tr><th>Quantity</th><th>Version 1 factor</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Output tokens</td><td>about 15 L per million</td><td>About 2.9 Wh per 1,000 tokens at 0.30 L/kWh on site plus 4.35 L/kWh for the grid (Jegham et al., Azure)</td></tr>
+        <tr><td class="k">Input tokens</td><td>about 0.5 L per million</td><td>About 0.05 Wh per 1,000 tokens, same factors</td></tr>
+        <tr><td class="k">Small models</td><td>about a third</td><td>GPT-4.1 nano, about 2.4 mL per 1,000 tokens</td></tr>
+        <tr><td class="k">Reasoning models</td><td>an uplift</td><td>About 30 times the energy on average (AI Energy Score v2)</td></tr>
+      </tbody>
+    </table>
+    <p class="small">Method: EcoLogits (server energy times on-site WUE plus PUE times off-site water intensity). Reference: ISO 14046. The derivation and sensitivity range are published with each version.</p>
+
+    <h2 id="verification">3. Verifying usage</h2>
+    <p>Usage comes from data the provider generated, and every pull is reconciled to the company's accounts-payable list of AI vendors, so every account is counted.</p>
+    <div class="tiers3">
+      <div class="tier"><svg class="ic"><use href="#i-check-doc"/></svg><h3>Attested</h3><div class="who">Under $5M revenue</div><p>Usage exports plus a signed attestation. Liters uplifted 25%.</p></div>
+      <div class="tier"><svg class="ic"><use href="#i-key"/></svg><h3>API-verified</h3><div class="who">$5M to $100M</div><p>Monthly pulls from billing data, gateway keys or the signed collector you run yourself.</p></div>
+      <div class="tier"><svg class="ic"><use href="#i-search"/></svg><h3>Audited</h3><div class="who">Over $100M</div><p>Limited assurance under ISO 14064-3, by your own auditor.</p></div>
+    </div>
+    <p class="small">Companies keep their administrative API keys. Read-only exports, gateway keys and the signed collector carry the data.</p>
+
+    <h2 id="match">4. The match</h2>
+    <div class="rules">
+      <div class="rule"><svg class="ic"><use href="#i-drop"/></svg><div><b>The floor</b>Every certification covers the full footprint.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-x10"/></svg><div><b>The standard tier</b>At least ten liters funded for every liter, with a minimum annual commitment.</div></div>
+    </div>
+
+    <h2 id="delivery">5. Delivered water</h2>
+    <div class="rules">
+      <div class="rule"><svg class="ic"><use href="#i-flask"/></svg><div><b>Confirmed from outside</b>Chlorine tests in household water, GPS and photos, flow sensors.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-people"/></svg><div><b>Counted conservatively</b>20 liters per person per day, actual users, uptake discounts, under VWBA 2.0 and the WASH Benefits framework.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-calendar"/></svg><div><b>A flow</b>Liters and person-years are counted within the year delivered.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-ledger"/></svg><div><b>Retired once</b>Serial-numbered in the public registry, credit split among funders.</div></div>
+    </div>
+
+    <h2 id="claims">6. The badge</h2>
+    <div class="rules">
+      <div class="rule"><svg class="ic"><use href="#i-shield"/></svg><div><b>Says what was funded</b>Volume, place, year, verified. Displayed only against a live registry entry.</div></div>
+      <div class="rule"><svg class="ic"><use href="#i-ban"/></svg><div><b>Reported where it was funded</b>Water funded in one basin is reported as water funded there, as a contribution.</div></div>
+    </div>
+
+    <h2 id="governance">7. Governance</h2>
+    <p>Public and free. Open to every organization that meets it, on a cost-based fee schedule. Developed with experts and stakeholders, a thirty-day comment period per version, certification decisions independent of fundraising, a published complaints and revocation procedure.</p>
+
+    <h2 id="versions">Version history</h2>
+    <table>
+      <thead><tr><th>Version</th><th>Date</th><th>Status</th></tr></thead>
+      <tbody><tr><td class="k">1.0 draft</td><td>October 2026</td><td>In drafting. Public comment opens with the pilot cohort.</td></tr></tbody>
+    </table>
+  </div>
+</div></main>

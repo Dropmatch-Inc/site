@@ -1,0 +1,46 @@
+<div class="pagehead photo" style="background-image: url('assets/registry-girl-well.jpg')">
+  <div class="wrap">
+    <div class="crumb"><a href="{{home}}">Home</a> / Registry</div>
+    <h1>Registry and ledger</h1>
+    <p class="lede">Every certified company, its verified usage, the water it funded and the proof. Every unit retired once. Revocations listed.</p>
+  </div>
+</div>
+<main><div class="wrap">
+  <form class="search" action="#"><input type="search" placeholder="Company name or verification ID" aria-label="Search the registry"><a class="btn btn-primary" href="#">Search</a></form>
+  <div class="filters"><a class="on" href="#">Certified</a><a href="#">Revoked</a><a href="#">All</a></div>
+
+  <div class="note-box">The registry opens with the first certifications. The entry below is example data, shown so the format is public before the first company is listed.</div>
+
+  <div class="ledger-row">
+    <div><b>2,250</b><span>person-years of safe water funded, about</span></div>
+    <div><b>4,500,000</b><span>liters funded against 150,000 liters of verified footprint</span></div>
+    <div><b>1</b><span>certified company, example</span></div>
+    <div><b>0</b><span>revocations</span></div>
+  </div>
+
+  <table class="stack">
+    <thead><tr><th>Company</th><th>Verification ID</th><th>Tier</th><th>Verified usage</th><th>Footprint</th><th>Water funded</th><th>Project</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="k" data-label="Company">Example Co</td>
+        <td class="mono" data-label="Verification ID">DM-2026-00001</td>
+        <td data-label="Tier">Dropmatch 10x, API-verified</td>
+        <td data-label="Verified usage">10 billion output tokens</td>
+        <td data-label="Footprint">150,000 L</td>
+        <td data-label="Water funded">4,500,000 L, about 2,250 person-years</td>
+        <td data-label="Project">In-line chlorination, India, 2026</td>
+        <td data-label="Status"><span class="verified">Verified</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>How to read an entry</h2>
+  <div class="rules">
+    <div class="rule"><svg class="ic"><use href="#i-chip"/></svg><div><b>Verified usage</b>Tokens pulled from the company's providers and reconciled to its accounts payable, under the tier shown.</div></div>
+    <div class="rule"><svg class="ic"><use href="#i-drop"/></svg><div><b>Footprint</b>That usage converted with the Standard's factors, scope 1 plus scope 2.</div></div>
+    <div class="rule"><svg class="ic"><use href="#i-tap"/></svg><div><b>Water funded</b>The volume delivered through the named project, with the person-years the evidence supports.</div></div>
+    <div class="rule"><svg class="ic"><use href="#i-pin"/></svg><div><b>Project</b>Links to the grant, its evidence (chlorine tests, GPS, photos, sensors) and the other funders sharing credit.</div></div>
+    <div class="rule"><svg class="ic"><use href="#i-shield"/></svg><div><b>Status</b>Verified, Pending or Revoked. A revoked entry stays listed with the date and the reason.</div></div>
+  </div>
+  <p class="small">Every Dropmatch badge resolves to a live entry on this page. Report any other at <a href="mailto:hello@dropmatch.org">hello@dropmatch.org</a>.</p>
+</div></main>
