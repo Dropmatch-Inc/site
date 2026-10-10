@@ -147,7 +147,7 @@ footer a { color: #DCE6F2; display: block; margin-bottom: 8px; }
 footer .col b { display: block; color: var(--white); margin-bottom: 10px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
 footer p { max-width: 460px; }
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   body { font-size: 16px; }
   h1 { font-size: 32px; } h2 { font-size: 25px; } .front h1 { font-size: 34px; }
   .topbar { display: none; }
@@ -212,7 +212,7 @@ footer p { max-width: 460px; }
 .ledger-row b { display: block; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--green); margin-bottom: 6px; }
 .ledger-row span { font-size: 14.5px; color: var(--muted); }
 main > .wrap > h2 { margin-top: 40px; }
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .hero { min-height: 540px; }
   .hero h1 { font-size: 48px; } .hero .tag { font-size: 22px; }
   .checkbar-grid, .about-grid, .news-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -264,7 +264,7 @@ ol.steps.icons .ic { width: 40px; height: 40px; margin-top: 2px; }
 .tier .fee { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin: 0; }
 .tier .fee span { display: block; font-size: 13.5px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
 .tier p { font-size: 14.5px; color: var(--muted); margin: 8px 0 0; }
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .flow { grid-template-columns: 1fr; }
   .flow .arrow { padding: 0; transform: rotate(90deg); height: 28px; }
   .parts, .tiers3, .rules { grid-template-columns: 1fr; }
@@ -279,7 +279,7 @@ ol.steps.icons .ic { width: 40px; height: 40px; margin-top: 2px; }
 .porg h3 { margin: 0 0 8px; font-size: 20px; }
 .porg p { color: var(--muted); font-size: 15px; margin: 0 0 12px; }
 .porg span { font-size: 13.5px; font-weight: 700; color: var(--navy); }
-@media (max-width: 760px) { .pgrid { grid-template-columns: 1fr; } }
+@media (max-width: 820px) { .pgrid { grid-template-columns: 1fr; } }
 
 /* v6 transparency */
 .transparency-strip { padding: 56px 0 40px; background: var(--white); }
@@ -288,6 +288,28 @@ ol.steps.icons .ic { width: 40px; height: 40px; margin-top: 2px; }
 .std-table td:nth-child(2) { width: 44%; }
 .rule b a, .porg h3 a, td.k a { color: var(--ink); }
 .rule b a:hover, .porg h3 a:hover, td.k a:hover { color: var(--blue); }
+
+/* tablet band: the seven-link nav between phone and desktop */
+.links a { white-space: nowrap; }
+.brand span { white-space: nowrap; }
+@media (max-width: 1000px) and (min-width: 821px) {
+  .links { gap: 0; }
+  .links a { font-size: 14px; padding: 9px 8px; }
+  .links .btn { margin-left: 4px; padding: 9px 12px; font-size: 14px; }
+  .brand { font-size: 19px; }
+  .brand small { display: none; }
+  .wrap { padding: 0 20px; }
+}
+@media (max-width: 900px) and (min-width: 821px) {
+  .topbar span { display: none; }
+  .links a:not(.btn) { font-size: 13.5px; padding: 8px 6px; }
+}
+.tscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 12px 0 24px; }
+.tscroll table { margin: 0; min-width: 560px; }
+.diagram svg { max-width: 100%; }
+.doc .body { min-width: 0; }
+.doc { min-width: 0; }
+.tscroll table { min-width: 0; width: 100%; }
 
 </style>
 </head>
@@ -387,7 +409,7 @@ ol.steps.icons .ic { width: 40px; height: 40px; margin-top: 2px; }
 
     <h2 id="factors">2. Tokens to liters</h2>
     <p>Usage is counted in tokens, as providers bill it, and converted with published factors per model tier and region.</p>
-    <table>
+    <div class="tscroll"><table>
       <thead><tr><th>Quantity</th><th>Version 1 factor</th><th>Basis</th></tr></thead>
       <tbody>
         <tr><td class="k">Output tokens</td><td>about 15 L per million</td><td>About 2.9 Wh per 1,000 tokens at 0.30 L/kWh on site plus 4.35 L/kWh for the grid (Jegham et al., Azure)</td></tr>
@@ -395,7 +417,7 @@ ol.steps.icons .ic { width: 40px; height: 40px; margin-top: 2px; }
         <tr><td class="k">Small models</td><td>about a third</td><td>GPT-4.1 nano, about 2.4 mL per 1,000 tokens</td></tr>
         <tr><td class="k">Reasoning models</td><td>an uplift</td><td>About 30 times the energy on average (AI Energy Score v2)</td></tr>
       </tbody>
-    </table>
+    </table></div>
     <p class="small">Method: EcoLogits (server energy times on-site WUE plus PUE times off-site water intensity). Reference: ISO 14046. The derivation and sensitivity range are published with each version.</p>
 
     <h2 id="verification">3. Verifying usage</h2>
@@ -431,10 +453,10 @@ ol.steps.icons .ic { width: 40px; height: 40px; margin-top: 2px; }
     <p>Public and free. Open to every organization that meets it, on a cost-based fee schedule. Developed with experts and stakeholders, a thirty-day comment period per version, certification decisions independent of fundraising, a published complaints and revocation procedure.</p>
 
     <h2 id="versions">Version history</h2>
-    <table>
+    <div class="tscroll"><table>
       <thead><tr><th>Version</th><th>Date</th><th>Status</th></tr></thead>
       <tbody><tr><td class="k">1.0 draft</td><td>October 2026</td><td>In drafting. Public comment opens with the pilot cohort.</td></tr></tbody>
-    </table>
+    </table></div>
   </div>
 </div></main>
 
